@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   port: 3306,
   user: 'root',
   password: '',
-  database: "bamazon_db"
+  database: "bamazon"
 });
 
 connection.connect(function (error) {
@@ -14,7 +14,7 @@ connection.connect(function (error) {
 
   connection.query(
     "SELECT * FROM products",
-    function (error, data) {
+    function (error, data, feilds) {
       for (var ctr = 0; ctr < data.length; ctr++) {
         console.log("ID: " + data[ctr].id + " PRODUCT: " + data[ctr].product_name + " $" + data[ctr].price);
       }
@@ -31,7 +31,7 @@ connection.connect(function (error) {
           "SELECT * FROM products WHERE ?", {
             id: answers.itemId
           },
-          function (error, data) {
+          function (error, data,) {
             if (answers.stock_quantity > data[0].stock_quantity) {
               console.log("Insufficient quantity!");
               connection.end();
@@ -47,7 +47,7 @@ connection.connect(function (error) {
                   }
                 ],
 
-                function (error, data) {
+                function (error, data,) {
                   console.log("Order placed!");
                   connection.end();
                 }
