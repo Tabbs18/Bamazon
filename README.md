@@ -1,3 +1,3 @@
 # Bamazon
 
-![image](https://user-images.githubusercontent.com/47481212/57795846-fbdb1100-7714-11e9-812e-aa4a04c7fe92.png)
+![image](https://user-images.githubusercontent.com/47481212/57799072-37c5a480-771c-11e9-9a3a-20383a7d3cdf.png)
